@@ -1,0 +1,27 @@
+<h1>Servicios</h1>
+
+<form id="serviceForm">
+  <input id="name" placeholder="Nombre" required>
+  <input id="description" placeholder="Descripción" required>
+  <input id="duration" type="number" placeholder="Duración" required>
+  <input id="price" type="number" placeholder="Precio" required>
+  <input id="category" placeholder="Categoría" required>
+  <label>
+    Disponible
+    <input id="available" type="checkbox">
+  </label>
+  <button type="submit">Agregar servicio</button>
+</form>
+
+<div id="services">
+  {{#each services}}
+    <article>
+      <h3>{{name}}</h3>
+      <p>{{description}}</p>
+      <p>Duración: {{duration}}</p>
+      <p>Precio: {{price}}</p>
+      <p>Categoría: {{category}}</p>
+      <p>Disponible: {{available}}</p>
+    </article>
+  {{/each}}
+</div>
