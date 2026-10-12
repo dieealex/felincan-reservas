@@ -6,18 +6,49 @@ import {
   updateService,
   deleteService
 } from "../controllers/services.controller.js";
-import { validateBody } from "../middlewares/validate.middleware.js";
+import {
+  validateBody,
+  validateParams,
+  validateQuery
+} from "../middlewares/validate.middleware.js";
 import {
   serviceCreateSchema,
-  serviceUpdateSchema
+  serviceUpdateSchema,
+  serviceIdSchema,
+  servicesQuerySchema
 } from "../validators/schemas.js";
 
 const router = Router();
 
-router.get("/", getServices);
-router.get("/:sid", getServiceById);
-router.post("/", validateBody(serviceCreateSchema), createService);
-router.put("/:sid", validateBody(serviceUpdateSchema), updateService);
-router.delete("/:sid", deleteService);
+router.get(
+  "/",
+  validateQuery(servicesQuerySchema),
+  getServices
+);
+
+router.get(
+  "/:sid",
+  validateParams(serviceIdSchema),
+  getServiceById
+);
+
+router.post(
+  "/",
+  validateBody(serviceCreateSchema),
+  createService
+);
+
+router.put(
+  "/:sid",
+  validateParams(serviceIdSchema),
+  validateBody(serviceUpdateSchema),
+  updateService
+);
+
+router.delete(
+  "/:sid",
+  validateParams(serviceIdSchema),
+  deleteService
+);
 
 export default router;

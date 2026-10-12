@@ -1,7 +1,7 @@
 {
-  "name": "preentrega-8",
+  "name": "felincan-reservas",
   "version": "1.0.0",
-  "description": "Sistema backend de turnos y reservas",
+  "description": "Sistema de reservas de servicios para mascotas",
   "type": "module",
   "main": "src/server.js",
   "scripts": {

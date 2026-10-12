@@ -1,7 +1,19 @@
-<h1>Servicios disponibles</h1>
+<section class="intro">
+  <h1>Servicios disponibles</h1>
+  <p>Servicios del catalogo habilitados para reservar.</p>
+</section>
 
-{{#each services}}
-  <p>{{name}} - ${{price}}</p>
-{{else}}
-  <p>No hay servicios disponibles.</p>
-{{/each}}
+<div id="availableServices" class="service-grid">
+  {{#each services}}
+    <article class="service-card">
+      <h3>{{name}}</h3>
+      <p>{{description}}</p>
+      <p>Duración: {{duration}} minutos</p>
+      <p>Precio: ${{price}}</p>
+      <p>Categoría: {{category}}</p>
+      <p class="availability">Disponible</p>
+    </article>
+  {{else}}
+    <p>No hay servicios disponibles.</p>
+  {{/each}}
+</div>

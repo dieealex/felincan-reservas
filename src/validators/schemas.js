@@ -30,3 +30,23 @@ export const addServiceSchema = z.object({
   bid: z.string().length(24),
   sid: z.string().length(24)
 });
+
+export const bookingIdSchema = z.object({
+  bid: z.string().length(24)
+});
+
+export const quantityUpdateSchema = z.object({
+  quantity: z.number().min(1)
+});
+export const serviceIdSchema = z.object({
+  sid: z.string().length(24)
+});
+
+export const servicesQuerySchema = z.object({
+  category: z.string().min(1).optional(),
+  available: z.string().optional(),
+  page: z.number().min(1),
+  limit: z.number().min(1),
+  sortBy: z.string().optional(),
+  order: z.string().optional()
+});

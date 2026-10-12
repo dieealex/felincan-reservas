@@ -2,11 +2,29 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Turnos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FelinCan Reservas</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-  {{{body}}}
+  <header class="site-header">
+    <a class="brand" href="/views/services">FelinCan Reservas</a>
+    <p>Cuidado y bienestar para perros y gatos</p>
+
+    <nav aria-label="Navegación principal">
+      <a href="/views/services">Todos los servicios</a>
+      <a href="/views/availability">Servicios disponibles</a>
+    </nav>
+  </header>
+
+  <main>
+    {{{body}}}
+  </main>
+
+  <footer>
+    FelinCan Reservas · Proyecto de Backend I
+  </footer>
+
   <script src="/socket.io/socket.io.js"></script>
   <script src="/js/socket.js"></script>
 </body>
